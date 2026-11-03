@@ -28,7 +28,7 @@
     <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="9.0.22" />
   </ItemGroup>
   <ItemGroup Label="Client">
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.14" />
   </ItemGroup>
   <ItemGroup Label="Tests">
     <PackageVersion Include="JsonSchema.Net" Version="9.6.0" />
