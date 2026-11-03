@@ -19,13 +19,13 @@ Built on .NET 11, Baseport runs as one process over one SQLite database file. Th
 **Linux**
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/baseporteu/baseport/main/Scripts/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/melosso/baseport/main/Scripts/install.sh | bash
 ```
 
 **Windows**
 
 ```powershell
-iwr https://raw.githubusercontent.com/baseporteu/baseport/main/Scripts/install.ps1 | iex
+iwr https://raw.githubusercontent.com/melosso/baseport/main/Scripts/install.ps1 | iex
 ```
 
 Both put a `baseport` command on your PATH. `baseport --urls http://localhost:5000` starts it, `baseport status` says whether it is running, `baseport logs` follows the log, `baseport doctor` tells you what is wrong, `baseport update` upgrades it in place, and `baseport uninstall` removes it and keeps your data. `baseport help` lists the rest. Releases ship `linux-x64` and `win-x64`.
@@ -54,14 +54,14 @@ baseport() {
 
 ## Documentation
 
-Full documentation lives at **[baseporteu.github.io/baseport](https://baseporteu.github.io/baseport/docs/)**.
+Full documentation lives at **[melosso.github.io/baseport](https://melosso.github.io/baseport/docs/)**.
 
-- [How to use Baseport](https://baseporteu.github.io/baseport/docs/how-to-use) walks from an empty console to a working REST call
-- [Tables and fields](https://baseporteu.github.io/baseport/docs/tables-and-fields), [Access rules](https://baseporteu.github.io/baseport/docs/access-rules) and [Relations](https://baseporteu.github.io/baseport/docs/relations) cover modelling your data
-- [Authentication](https://baseporteu.github.io/baseport/docs/authentication) covers API tokens, end user accounts, single sign-on and anonymous accounts
-- [Forms and embeds](https://baseporteu.github.io/baseport/docs/forms) covers publishing a table as a public page
-- [Going to production](https://baseporteu.github.io/baseport/docs/going-to-production) covers configuration, backups and the switches that are off by default
-- [Web APIs reference](https://baseporteu.github.io/baseport/docs/api) lists every published route
+- [How to use Baseport](https://melosso.github.io/baseport/docs/how-to-use) walks from an empty console to a working REST call
+- [Tables and fields](https://melosso.github.io/baseport/docs/tables-and-fields), [Access rules](https://melosso.github.io/baseport/docs/access-rules) and [Relations](https://melosso.github.io/baseport/docs/relations) cover modelling your data
+- [Authentication](https://melosso.github.io/baseport/docs/authentication) covers API tokens, end user accounts, single sign-on and anonymous accounts
+- [Forms and embeds](https://melosso.github.io/baseport/docs/forms) covers publishing a table as a public page
+- [Going to production](https://melosso.github.io/baseport/docs/going-to-production) covers configuration, backups and the switches that are off by default
+- [Web APIs reference](https://melosso.github.io/baseport/docs/api) lists every published route
 
 Your own instance also serves its OpenAPI document at `/api/openapi.json` and renders it at `/docs`.
 

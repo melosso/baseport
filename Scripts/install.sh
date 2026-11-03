@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="${BASEPORT_REPO:-baseporteu/baseport}"
+REPO="${BASEPORT_REPO:-melosso/baseport}"
 # Root installs exist to be services, they default where a service account can read: /root is 0700, /opt is not.
 if [ "$(id -u)" = "0" ]; then
   DIR="${BASEPORT_DIR:-/opt/baseport}"

@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-Report vulnerabilities through [GitHub Private Vulnerability Reporting](https://github.com/baseporteu/baseport/security/advisories/new) (**Security** tab > **Report a vulnerability**). Do not use public issues or pull requests to report security flaws.
+Report vulnerabilities through [GitHub Private Vulnerability Reporting](https://github.com/melosso/baseport/security/advisories/new) (**Security** tab > **Report a vulnerability**). Do not use public issues or pull requests to report security flaws.
 
 Please include the following details in your report:
 
@@ -47,4 +47,4 @@ Security testing must be strictly limited to instances that you own and operate 
 
 ## Hardening
 
-For production deployment guidance—including TLS configuration, forwarded headers, isolating the admin listener, and backup strategies—refer to [Going to production](https://baseporteu.github.io/baseport/docs/going-to-production).
+For production deployment guidance—including TLS configuration, forwarded headers, isolating the admin listener, and backup strategies—refer to [Going to production](https://melosso.github.io/baseport/docs/going-to-production).

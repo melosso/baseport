@@ -75,7 +75,7 @@ Both paths are printed before the download. `BASEPORT_DIR` and `BASEPORT_BIN` ov
 
 ```bash
 BASEPORT_DIR=/srv/baseport BASEPORT_BIN=/usr/local/bin \
-  curl -sSL https://raw.githubusercontent.com/baseporteu/baseport/main/Scripts/install.sh | sudo bash
+  curl -sSL https://raw.githubusercontent.com/melosso/baseport/main/Scripts/install.sh | sudo bash
 ```
 
 The wrapper stores the chosen directory; `baseport update` uses it.

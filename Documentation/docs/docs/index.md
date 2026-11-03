@@ -15,15 +15,15 @@ Baseport is pre-alpha. The database format and the API surface change between co
 
 ::: code-group
 ```sh [Linux]
-curl -sSL https://raw.githubusercontent.com/baseporteu/baseport/main/Scripts/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/melosso/baseport/main/Scripts/install.sh | bash
 ```
 ```powershell [Windows]
-iwr https://raw.githubusercontent.com/baseporteu/baseport/main/Scripts/install.ps1 | iex
+iwr https://raw.githubusercontent.com/melosso/baseport/main/Scripts/install.ps1 | iex
 ```
 ```yaml [Docker]
 services:
   baseport:
-    image: ghcr.io/baseporteu/baseport:latest
+    image: ghcr.io/melosso/baseport:latest
     container_name: baseport
     restart: unless-stopped
     ports:

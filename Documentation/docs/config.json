@@ -7,20 +7,20 @@
   "brandImage": "/assets/baseporteu.png",
   "favicon": "🛟",
   "lastUpdated": true,
-  "repo": "https://github.com/baseporteu/baseport",
-  "footer": "© {year} Baseport · Licensed under [EUPL 1.2](https://github.com/baseporteu/baseport/blob/main/LICENSE). Built with [Bark](https://github.com/melosso/bark/).",
+  "repo": "https://github.com/melosso/baseport",
+  "footer": "© {year} Baseport · Licensed under [EUPL 1.2](https://github.com/melosso/baseport/blob/main/LICENSE). Built with [Bark](https://github.com/melosso/bark/).",
   "bottomNav": [
     {
       "text": "Issues",
-      "link": "https://github.com/baseporteu/baseport/issues"
+      "link": "https://github.com/melosso/baseport/issues"
     },
     {
       "text": "Security",
-      "link": "https://github.com/baseporteu/baseport/security/policy"
+      "link": "https://github.com/melosso/baseport/security/policy"
     }
   ],
   "editLink": {
-    "pattern": "https://github.com/baseporteu/baseport/edit/main/Documentation/docs/:path",
+    "pattern": "https://github.com/melosso/baseport/edit/main/Documentation/docs/:path",
     "text": "Edit this page on GitHub"
   },
   "head": [],
@@ -38,11 +38,11 @@
       "items": [
         {
           "text": "Download",
-          "link": "https://github.com/baseporteu/baseport/releases/"
+          "link": "https://github.com/melosso/baseport/releases/"
         },
         {
           "text": "Source",
-          "link": "https://github.com/baseporteu/baseport"
+          "link": "https://github.com/melosso/baseport"
         }
       ]
     }

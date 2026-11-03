@@ -50,7 +50,7 @@ Session cookies are `Secure` unless the host is `localhost`, `127.0.0.1` or `[::
 A root install uses `/opt/baseport` with the wrapper in `/usr/local/bin`. `service` writes the systemd unit:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/baseporteu/baseport/main/Scripts/install.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/melosso/baseport/main/Scripts/install.sh | sudo bash
 
 sudo /usr/local/bin/baseport service
 ```
@@ -244,5 +244,5 @@ Without the wrapper on the PATH, rerunning the installer has the same effect.
 Each release archive carries a build provenance attestation and an SPDX SBOM (`Baseport-<tag>-<rid>.spdx.json`) on the release page. The container image carries both as registry attestations.
 
 ```bash
-gh attestation verify Baseport-v0.1.0-linux-x64.tar.gz --repo baseporteu/baseport
+gh attestation verify Baseport-v0.1.0-linux-x64.tar.gz --repo melosso/baseport
 ```

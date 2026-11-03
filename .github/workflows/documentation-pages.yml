@@ -65,7 +65,7 @@ jobs:
       working-directory: ${{ github.workspace }}/publish
       run: |
         ./Bark --export ${{ github.workspace }}/site \
-          --base-url https://baseporteu.github.io \
+          --base-url https://melosso.github.io \
           --base-path /baseport
 
     - name: Upload artifact

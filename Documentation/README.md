@@ -20,7 +20,7 @@ The site is served at `http://localhost:5991`.
 
 ## Publishing
 
-`.github/workflows/documentation-pages.yml` builds this directory with Bark and deploys it to GitHub Pages on every push that touches `Documentation/docs/**`. It publishes to `https://baseporteu.github.io/baseport`.
+`.github/workflows/documentation-pages.yml` builds this directory with Bark and deploys it to GitHub Pages on every push that touches `Documentation/docs/**`. It publishes to `https://melosso.github.io/baseport`.
 
 Prerequisite: Pages enabled on the repository (Settings > Pages, Source "GitHub Actions"). The workflow fails without it.
 

@@ -16,9 +16,9 @@
     <Company>Melosso</Company>
     <Product>Baseport</Product>
     <Copyright>Copyright © Baseport $([System.DateTime]::Now.Year)</Copyright>
-    <RepositoryUrl>https://github.com/baseporteu/baseport</RepositoryUrl>
+    <RepositoryUrl>https://github.com/melosso/baseport</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/baseporteu/baseport</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/melosso/baseport</PackageProjectUrl>
     <PackageLicenseExpression>EUPL-1.2</PackageLicenseExpression>
   </PropertyGroup>
 

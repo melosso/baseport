@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
-$repo = if ($env:BASEPORT_REPO) { $env:BASEPORT_REPO } else { 'baseporteu/baseport' }
+$repo = if ($env:BASEPORT_REPO) { $env:BASEPORT_REPO } else { 'melosso/baseport' }
 $root = if ($env:LOCALAPPDATA) { $env:LOCALAPPDATA } else { $HOME }
 $dir  = if ($env:BASEPORT_DIR) { $env:BASEPORT_DIR } else { Join-Path $root 'Baseport' }
 $api  = "https://api.github.com/repos/$repo/releases"

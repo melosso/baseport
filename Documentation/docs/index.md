@@ -12,7 +12,7 @@ hero:
       link: docs/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/baseporteu/baseport
+      link: https://github.com/melosso/baseport
 features:
   - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg>'
     title: Typed tables
