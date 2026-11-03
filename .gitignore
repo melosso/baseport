@@ -58,6 +58,7 @@ appsettings.*.json
 # directory rules
 .*/
 !.github/
+!.identity/
 Source/Baseport/*.key
 Source/Baseport/keys/
 Source/Baseport/baseport.lock
