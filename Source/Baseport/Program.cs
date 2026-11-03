@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Serilog;
 
+if (Microsoft.Extensions.Hosting.WindowsServices.WindowsServiceHelpers.IsWindowsService())
+    Directory.SetCurrentDirectory(EnvFile.InstallDirectory());
+
 var bundledSettings = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
 var localSettings = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
 if (!File.Exists(bundledSettings) && !File.Exists(localSettings))
@@ -17,6 +20,9 @@ if (!File.Exists(bundledSettings) && !File.Exists(localSettings))
 
 try
 {
+    if (args.Length > 0 && await InstallCli.RunAsync(args) is { } handled)
+        return handled;
+
     if (args.Length > 0 && args[0] == "providers")
         return await ProvidersCli.RunAsync(args, bundledSettings, localSettings);
 
@@ -24,7 +30,7 @@ try
         return await AccountsCli.RunAsync(args, bundledSettings, localSettings);
 
     if (args.Length > 0 && args[0] == "restore")
-        return await RestoreCli.RunAsync(args, bundledSettings, localSettings);
+        return await InstallCli.AroundRestoreAsync(args, a => RestoreCli.RunAsync(a, bundledSettings, localSettings));
 
     if (args.Length > 0 && args[0] == "check")
         return await DatabaseIntegrity.RunCliAsync(ConfigCli.Build(bundledSettings, localSettings)["Baseport:ConnectionString"] ?? "Data Source=baseport.db", Console.Out);
@@ -45,12 +51,6 @@ if (args.Length > 0 && args[0] == "version")
 {
     Console.WriteLine(CliHelp.Version);
     return 0;
-}
-
-if (args.Length > 0 && CliHelp.WrapperCommands.Contains(args[0]))
-{
-    Console.Error.WriteLine($"'{args[0]}' comes from the baseport wrapper script, not the binary. Run: baseport {args[0]}");
-    return 1;
 }
 
 if (args.Length > 0 && !args[0].StartsWith('-')) return CliHelp.Invalid();
@@ -100,6 +100,7 @@ try
         WebRootPath = Directory.Exists(bundledWebRoot) ? bundledWebRoot : null
     });
     builder.Host.UseSerilog();
+    builder.Host.UseWindowsService(o => o.ServiceName = "Baseport");
     builder.WebHost.ConfigureKestrel(o =>
     {
         o.AddServerHeader = false;

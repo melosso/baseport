@@ -7,6 +7,10 @@ updates:
     groups:
       nuget:
         patterns: ["*"]
+    ignore:
+      # The client targets net8.0; a newer major forces consumers onto newer Microsoft.Extensions packages.
+      - dependency-name: Microsoft.Extensions.Http
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

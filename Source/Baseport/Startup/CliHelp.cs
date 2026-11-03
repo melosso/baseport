@@ -8,11 +8,6 @@ public static class CliHelp
         (Assembly.GetEntryAssembly()?.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
          ?? "unknown").Split('+')[0];
 
-    public static readonly string[] WrapperCommands =
-    {
-        "logs", "update", "service", "start", "stop", "restart", "status", "doctor", "uninstall"
-    };
-
     public static readonly string[] Commands =
     {
         // Help & Information
@@ -30,11 +25,11 @@ public static class CliHelp
         "providers                     Toggle Postgres and TDS endpoints on or off",
 
         // Service control
-        "start | stop | restart        Control the systemd service (Linux, root)",
+        "start | stop | restart        Control the Baseport service (root or administrator)",
         "stop --force                  Stop any running service or foreground process",
 
         // Installation
-        "service [--urls URL]          Install the systemd service (Linux, root)",
+        "service [--urls URL]          Install Baseport as a systemd or Windows service",
         "update                        Replace the installation with the latest release",
         "uninstall [--purge]           Remove Baseport, with optional data deletion"
     };

@@ -20,14 +20,14 @@ The installer adds a `baseport` wrapper to the PATH. It runs the binary from the
 | `baseport restore <archive> [--yes]` | Replace the data with a backup; the current files move aside. See [Restore](/docs/going-to-production#restore) |
 | `baseport logs [lines]` | Follow the log files, default 200 lines back, with the first-start login printed above the tail |
 | `baseport update` | Stop, replace the binary with the latest release, restart the service |
-| `baseport service [--urls URL]` | Install the systemd service (Linux, root) |
-| `baseport start`, `stop`, `restart` | Control the service (Linux, root) |
+| `baseport service [--urls URL]` | Install the service: systemd as the `baseport` user (Linux, root), or a Windows service as `LocalService` (administrator) |
+| `baseport start`, `stop`, `restart` | Control the systemd service (Linux, root) or the `Baseport` Windows service (administrator) |
 | `baseport stop --force` | Stop the service and any foreground instance; succeeds when nothing runs |
 | `baseport uninstall [--purge]` | Remove the service, program files and wrapper. `--purge` also deletes the data, after a confirmation |
 | `baseport accounts ...` | Account operations, below |
 | `baseport providers ...` | Wire listener control, below |
 
-`logs`, `update`, `service`, `start`, `stop`, `restart`, `status`, `doctor` and `uninstall` belong to the wrapper script; the binary answers them with a pointer to the wrapper. `restore` exists in both: the wrapper stops and restarts the service around the binary's restore. Under systemd, `journalctl -u baseport` carries the same log output.
+Every command except `update` is part of the binary, so `Baseport` and `Baseport.exe` answer them directly. `update` stays in the wrapper because a running binary cannot replace itself. `restore` stops the service around the restore and starts it again afterwards. Under systemd, `journalctl -u baseport` carries the same log output.
 
 `doctor` checks: version and install path, whether the wrapper on the PATH belongs to this install, whether the database exists and passes `baseport check`, the service state, whether the unit runs from the updated directory, and whether the service address answers.
 
