@@ -71,7 +71,7 @@ The docs site lives in `Documentation/` and is built by Bark. See [Documentation
 ```bash
 cd Source
 dotnet build Baseport.slnx
-dotnet test Baseport.slnx
+dotnet test --solution Baseport.slnx
 node ../Scripts/test-frontend.js
 cd .. && npx prettier@3 --check "Source/Baseport/wwwroot/**/*.js" "Scripts/*.js"
 ```
