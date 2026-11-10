@@ -7,7 +7,6 @@ on:
   workflow_dispatch: {}
 
 env:
-  DOTNET_VERSION: '11.0.x'
   SOLUTION_PATH: 'Source/Baseport.slnx'
   PROJECT_PATH: 'Source/Baseport.Client/Baseport.Client.csproj'
 
@@ -29,8 +28,7 @@ jobs:
       - name: "Install .NET"
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
-          dotnet-quality: 'preview'
+          global-json-file: global.json
 
       - name: Restore
         run: dotnet restore ${{ env.SOLUTION_PATH }} --locked-mode
