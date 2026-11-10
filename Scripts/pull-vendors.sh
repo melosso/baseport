@@ -9,7 +9,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VENDOR_DIR="$ROOT/Source/Baseport/wwwroot/js/vendor"
 mkdir -p "$VENDOR_DIR"
 
-SCALAR_VERSION="1.72.1"
+SCALAR_VERSION="1.77.0"
 OAS_SCHEMA_URL="https://spec.openapis.org/oas/3.2/schema/2026-08-30"
 OAS_SCHEMA_SHA256="ec53db6e114b768ff2d273b232bda210f51b70c5e57d57ac8daf7e8496a6e073"
 PREACT_VERSION="10.29.8"
