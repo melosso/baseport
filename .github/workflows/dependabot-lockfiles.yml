@@ -1,0 +1,46 @@
+name: Dependabot lock files
+
+# Dependabot relocks only the project that references a package directly; every project above it stays stale.
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'Source/Directory.Packages.props'
+      - '**/packages.lock.json'
+
+permissions:
+  contents: read
+
+jobs:
+  relock:
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - name: Checkout pull request branch
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: Refresh lock files
+        run: dotnet restore Source/Baseport.slnx --force-evaluate
+
+      - name: Commit and rerun tests
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          git diff --quiet -- '*packages.lock.json' && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*packages.lock.json'
+          git commit -m "chore: refresh lock files"
+          git push
+          gh workflow run ci.yml --ref "$BRANCH"
