@@ -1,6 +1,4 @@
-<p align="center">
-   <img src=".github/assets/baseport.webp" alt="Logo">
-</p>
+![Baseport](.github/assets/banner.webp)
 
 # Baseport
 
@@ -69,7 +67,7 @@ Your own instance also serves its OpenAPI document at `/api/openapi.json` and re
 
 Contributions are greatly appreciated. For any changes beyond simple bug fixes, please open an issue first (use tag: `enhancement`) so we can align on the proposal and make sure it fits the project roadmap.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for building and testing from source.
+See [Contributing](?tab=contributing-ov-file) for building and testing from source.
 
 ## License
 
