@@ -4,23 +4,23 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <EfCoreVersion>10.0.14</EfCoreVersion>
+    <EfCoreVersion>11.0.0</EfCoreVersion>
     <SerilogSinksVersion>10.0.0</SerilogSinksVersion>
     <IdentityModelVersion>8.23.0</IdentityModelVersion>
   </PropertyGroup>
   <ItemGroup Label="App">
-    <PackageVersion Include="AWSSDK.S3" Version="4.0.104.11" />
+    <PackageVersion Include="AWSSDK.S3" Version="4.1.0" />
     <PackageVersion Include="DiceBear.Core" Version="10.7.0" />
     <PackageVersion Include="DiceBear.Styles" Version="10.6.0" />
     <PackageVersion Include="HtmlSanitizer" Version="11.0.26" />
-    <PackageVersion Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="7.1.2" />
     <PackageVersion Include="Npgsql" Version="10.0.3" />
     <PackageVersion Include="Serilog" Version="4.4.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="$(SerilogSinksVersion)" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageVersion Include="Cronos" Version="0.13.0" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="10.0.14" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="11.0.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EfCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(EfCoreVersion)" />
     <PackageVersion Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="$(IdentityModelVersion)" />
@@ -34,7 +34,7 @@
   <ItemGroup Label="Tests">
     <PackageVersion Include="JsonSchema.Net" Version="9.6.0" />
     <PackageVersion Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.12.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.11.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
     <PackageVersion Include="xunit.v3" Version="4.0.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.1" />
   </ItemGroup>
