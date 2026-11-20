@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:11.0-preview-alpine AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:11.0-alpine AS build
 ARG TARGETARCH
 WORKDIR /src
 
@@ -13,7 +13,7 @@ COPY Source/Baseport/ Source/Baseport/
 RUN RID="linux-musl-$(case "$TARGETARCH" in amd64) echo x64 ;; *) echo "$TARGETARCH" ;; esac)" \
     && dotnet publish Source/Baseport/Baseport.csproj -c Release -r "$RID" -p:RestoreLockedMode=true -o /app/publish
 
-FROM mcr.microsoft.com/dotnet/runtime-deps:11.0-preview-alpine AS runtime
+FROM mcr.microsoft.com/dotnet/runtime-deps:11.0-alpine AS runtime
 WORKDIR /app
 
 RUN addgroup -S baseport && adduser -S -G baseport baseport
